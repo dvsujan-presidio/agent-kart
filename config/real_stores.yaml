@@ -1,0 +1,338 @@
+# config/real_stores.yaml
+# Real Store Mode: US stores with LIVE UCP manifests, grouped by scenario (24 entries, 23 unique stores, 5 scenarios; family-friendly only).
+# Schema: scenarios.<id>.{pitch, showcases, stores[]}. Each store: id, name, domain, manifest,
+# ucp_mcp_endpoint, permalink_endpoint, covers, price_level?, notes?, enabled, mcp_verified.
+# Endpoints here are a snapshot for humans; code must re-read them from each manifest at runtime.
+#
+# Verified 2026-10-14 by fetching each store's /.well-known/ucp (GET).
+# Every store below publishes:
+#   ucp.version: 2026-08-25 (also supports 2026-04-08, 2026-01-23)
+#   service dev.ucp.shopping over MCP at https://{myshopify_domain}/api/ucp/mcp
+#   capabilities: catalog.search, catalog.lookup, cart, checkout, discount (ext),
+#                 fulfillment (ext, shipping), order, permalink, identity_linking (Shop accounts OAuth)
+#   payment handlers: Google Pay, Shopify card, Shop Pay
+#
+# IMPORTANT
+# - The MCP endpoint is on the *.myshopify.com domain, not the public domain. Always read it
+#   from the manifest at runtime instead of hardcoding (it can change).
+# - "Declares checkout" != "anonymous agents may complete checkout". Expect agent profile /
+#   auth requirements on cart and checkout calls. AgentKart never completes payment on real stores.
+# - Handoff: use the UCP permalink capability (endpoint below) to send the shopper to the
+#   store's real checkout with the cart pre-filled. This keeps the whole flow UCP-native.
+# - NOT yet verified: actual MCP tool calls (POST). Workstream F runs one catalog search
+#   per store with the AgentKart agent profile and sets mcp_verified: true.
+
+currency: USD
+verified_on: 2026-10-14
+ucp_version: "2026-08-25"
+
+scenarios:
+
+  birthday_party:
+    pitch: "Birthday party for 10 in the US, under $80"
+    showcases: [quantities per guest, cheap/mid/premium trade-offs, out-of-stock exclusion]
+    stores:
+      # ---------- party supplies ----------
+      - id: peachstate
+        name: Peach State Party Supplies
+        domain: peachstatepartysupplies.com
+        manifest: https://peachstatepartysupplies.com/.well-known/ucp
+        ucp_mcp_endpoint: https://peachstatepartysupplies.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://peachstatepartysupplies.com/buy
+        covers: [cups, plates, napkins, balloons, banners, decorations, party_packs]
+        price_level: budget      # 9 oz paper cups 8ct ~$1.82, 12 oz 10ct ~$3.99
+        notes: >
+          Cheapest basics. Many items available=false (good for out-of-stock exclusion demo).
+          Heavy on licensed character themes; prefer plain/solid-color items in the demo.
+        enabled: true
+        mcp_verified: false
+
+      - id: sweetlulu
+        name: Shop Sweet Lulu
+        domain: shopsweetlulu.com
+        manifest: https://shopsweetlulu.com/.well-known/ucp
+        ucp_mcp_endpoint: https://shop-sweet-lulu.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://shopsweetlulu.com/buy
+        covers: [cups, napkins, plates, decorations, candles, party_favors]
+        price_level: mid         # 12 oz paper cups 8ct $4.00
+        enabled: true
+        mcp_verified: false
+
+      - id: merimeri
+        name: Meri Meri
+        domain: www.merimeri.com
+        manifest: https://www.merimeri.com/.well-known/ucp
+        ucp_mcp_endpoint: https://meri-meri3.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://merimeri.com/buy
+        covers: [napkins, cake_toppers, candles, hanging_decorations, party_favors]
+        price_level: premium     # the "upgrade breaks the budget" trade-off
+        enabled: true
+        mcp_verified: false
+
+      # ---------- cake (fills the cake gap) ----------
+      - id: milkbar
+        name: Milk Bar
+        domain: milkbarstore.com
+        manifest: https://milkbarstore.com/.well-known/ucp
+        ucp_mcp_endpoint: https://milk-bar-development.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://milkbarstore.com/buy
+        covers: [cake, cookies, desserts]
+        price_level: premium
+        notes: >
+          Ships cakes nationwide (confirm delivery dates via fulfillment). Endpoint host is named
+          "milk-bar-development" in the live manifest; that is what the production domain
+          advertises, but double-check results look like the real catalog.
+        enabled: true
+        mcp_verified: false
+
+      # ---------- drinks (fills the drinks gap) ----------
+      - id: olipop
+        name: OLIPOP
+        domain: drinkolipop.com
+        manifest: https://drinkolipop.com/.well-known/ucp
+        ucp_mcp_endpoint: https://olipop-store.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://drinkolipop.com/buy
+        covers: [drinks, soda]
+        price_level: mid
+        notes: Sold in multi-can packs; quantity calculator must convert guests -> cans -> packs.
+        enabled: true
+        mcp_verified: false
+
+      # ---------- snacks / candy ----------
+      - id: dylans
+        name: Dylan's Candy Bar
+        domain: www.dylanscandybar.com
+        manifest: https://www.dylanscandybar.com/.well-known/ucp
+        ucp_mcp_endpoint: https://dylans-candy-bar-dev.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://www.dylanscandybar.com/buy
+        covers: [candy, snacks, party_favors]
+        price_level: mid
+        notes: Endpoint host is named "...-dev" in the live manifest; verify results match the real catalog.
+        enabled: true
+        mcp_verified: false
+
+      - id: bonbonbon
+        name: Bon Bon Bon
+        domain: www.bonbonbon.com
+        manifest: https://www.bonbonbon.com/.well-known/ucp
+        ucp_mcp_endpoint: https://bonbonbonchoc.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://bonbonbon.com/buy
+        covers: [chocolate, candy, gifts]
+        price_level: premium
+        enabled: true
+        mcp_verified: false
+      - id: magnolia
+        name: Magnolia Bakery
+        domain: www.magnoliabakery.com
+        manifest: https://www.magnoliabakery.com/.well-known/ucp
+        ucp_mcp_endpoint: https://magnoliabakerystore.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://www.magnoliabakery.com/buy
+        covers: [cake, cupcakes, banana_pudding, desserts]
+        notes: Second cake source; gives Milk Bar a real price competitor.
+        enabled: true
+        mcp_verified: false
+      - id: feastables
+        name: Feastables
+        domain: feastables.com
+        manifest: https://feastables.com/.well-known/ucp
+        ucp_mcp_endpoint: https://feastables.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://feastables.com/buy
+        covers: [chocolate_bars, snacks, party_favors]
+        notes: Kid-friendly snack option; good budget alternative to premium chocolate.
+        enabled: true
+        mcp_verified: false
+
+# =====================================================================
+# MORE SCENARIOS (verified 2026-10-14, same UCP 2026-08-25 capability set:
+# catalog.search/lookup, cart, checkout, discount, fulfillment, order, permalink)
+# =====================================================================
+  camping_weekend:
+    pitch: "Weekend camping trip for 4, leaving Friday, under $500"
+    showcases: [per-person quantities, deadline (ships before Friday), cross-store consolidation]
+    stores:
+      - id: cotopaxi
+        name: Cotopaxi
+        domain: cotopaxi.com
+        manifest: https://cotopaxi.com/.well-known/ucp
+        ucp_mcp_endpoint: https://cotopaxi.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://www.cotopaxi.com/buy
+        covers: [backpacks, jackets, blankets, outdoor_apparel]
+        enabled: true
+        mcp_verified: false
+      - id: biolite
+        name: BioLite
+        domain: bioliteenergy.com
+        manifest: https://bioliteenergy.com/.well-known/ucp
+        ucp_mcp_endpoint: https://biolite-2.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://www.bioliteenergy.com/buy
+        covers: [camp_stoves, lanterns, headlamps, power_banks]
+        enabled: true
+        mcp_verified: false
+      - id: stanley
+        name: Stanley 1913
+        domain: stanley1913.com
+        manifest: https://stanley1913.com/.well-known/ucp
+        ucp_mcp_endpoint: https://stanley-pmi.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://www.stanley1913.com/buy
+        covers: [tumblers, bottles, coolers, camp_cookware]
+        enabled: true
+        mcp_verified: false
+      - id: rumpl
+        name: Rumpl
+        domain: www.rumpl.com
+        manifest: https://www.rumpl.com/.well-known/ucp
+        ucp_mcp_endpoint: https://gorumpl.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://www.rumpl.com/buy
+        covers: [camping_blankets, outdoor_blankets]
+        enabled: true
+        mcp_verified: false
+      - id: owala
+        name: Owala
+        domain: owalalife.com
+        manifest: https://owalalife.com/.well-known/ucp
+        ucp_mcp_endpoint: https://owala.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://checkout.owalalife.com/buy
+        covers: [water_bottles, tumblers]
+        notes: Checkout/permalink host is checkout.owalalife.com. Price competitor to Stanley.
+        enabled: true
+        mcp_verified: false
+
+  first_apartment:
+    pitch: "Move-in kit for my first apartment (1 bedroom, cooks often), under $600"
+    showcases: [goal -> category list, premium vs value trade-offs, bundle/discount extension]
+    stores:
+      - id: brooklinen
+        name: Brooklinen
+        domain: brooklinen.com
+        manifest: https://brooklinen.com/.well-known/ucp
+        ucp_mcp_endpoint: https://brooklinen2.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://www.brooklinen.com/buy
+        covers: [sheets, duvets, pillows, towels]
+        enabled: true
+        mcp_verified: false
+      - id: caraway
+        name: Caraway
+        domain: carawayhome.com
+        manifest: https://carawayhome.com/.well-known/ucp
+        ucp_mcp_endpoint: https://caraway-home.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://shop.carawayhome.com/buy
+        covers: [cookware_sets, bakeware, food_storage]
+        notes: Checkout/permalink host is shop.carawayhome.com.
+        enabled: true
+        mcp_verified: false
+      - id: misen
+        name: Misen
+        domain: misen.com
+        manifest: https://misen.com/.well-known/ucp
+        ucp_mcp_endpoint: https://misenco.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://misen.com/buy
+        covers: [knives, pans, cookware]
+        notes: Natural trade-off partner for Caraway (pans/cookware overlap).
+        enabled: true
+        mcp_verified: false
+      - id: ourplace
+        name: Our Place
+        domain: fromourplace.com
+        manifest: https://fromourplace.com/.well-known/ucp
+        ucp_mcp_endpoint: https://fromourplace-com.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://fromourplace.com/buy
+        covers: [cookware, pans, small_appliances, dinnerware]
+        notes: Third cookware option alongside Caraway and Misen.
+        enabled: true
+        mcp_verified: false
+      - id: parachute
+        name: Parachute
+        domain: www.parachutehome.com
+        manifest: https://www.parachutehome.com/.well-known/ucp
+        ucp_mcp_endpoint: https://parachute-home-2.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://parachutehome.com/buy
+        covers: [sheets, duvets, towels, bath]
+        notes: Bedding competitor to Brooklinen.
+        enabled: true
+        mcp_verified: false
+
+  home_gym:
+    pitch: "Home workout setup for 2 people, under $300"
+    showcases: [per-person sizing, overlap between stores, budget trade-offs]
+    stores:
+      - id: bala
+        name: Bala
+        domain: shopbala.com
+        manifest: https://shopbala.com/.well-known/ucp
+        ucp_mcp_endpoint: https://bala-test-123.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://shopbala.com/buy
+        covers: [dumbbells, ankle_weights, workout_equipment]
+        notes: Endpoint host is "bala-test-123" in the LIVE public manifest; confirm results match the real catalog.
+        enabled: true
+        mcp_verified: false
+      - id: gymshark
+        name: Gymshark US
+        domain: gymshark.com
+        manifest: https://gymshark.com/.well-known/ucp
+        ucp_mcp_endpoint: https://gymsharkusa.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://us.checkout.gymshark.com/buy
+        covers: [workout_apparel, accessories]
+        notes: UCP Checker agent run confirmed search_catalog -> create_cart works.
+        enabled: true
+        mcp_verified: false
+      - id: allbirds
+        name: Allbirds
+        domain: allbirds.com
+        manifest: https://allbirds.com/.well-known/ucp
+        ucp_mcp_endpoint: https://weareallbirds.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://www.allbirds.com/buy
+        covers: [running_shoes, activewear, socks]
+        enabled: true
+        mcp_verified: false
+      - id: owala_gym
+        name: Owala
+        domain: owalalife.com
+        manifest: https://owalalife.com/.well-known/ucp
+        ucp_mcp_endpoint: https://owala.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://checkout.owalalife.com/buy
+        covers: [water_bottles]
+        notes: Same store as camping 'owala'; separate id so each scenario lists it.
+        enabled: true
+        mcp_verified: false
+
+  desk_setup_bonus:
+    pitch: "New job desk kit (notebooks, pens, tumbler), under $100"
+    stores:
+      - id: baronfig
+        name: Baron Fig
+        domain: baronfig.com
+        manifest: https://baronfig.com/.well-known/ucp
+        ucp_mcp_endpoint: https://baron-fig.myshopify.com/api/ucp/mcp
+        permalink_endpoint: https://baronfig.com/buy
+        covers: [notebooks, pens, desk_accessories]
+        enabled: true
+        mcp_verified: false
+      # also reuse: stanley (tumbler)
+
+# FAMILY-FRIENDLY ONLY: no 18+ / age-restricted brands (alcohol, adult supplements, etc.).
+#   Removed: gorillamind.com (pre-workout/energy supplements often adults-only).
+#   Skipped: liquiddeath.com (has a live UCP manifest, but not added; cannot confirm no age-restricted products).
+#
+# Checked for these scenarios, NOT usable right now:
+#   solostove.com, ruggable.com: 404 on apex; www fetch also failed 2026-10-14 (may be bot protection)
+#   sietefoods.com: fetch failed 2026-10-14
+#   kytebaby.com, wildone.com: not checked
+#   poketo.com: redirects to Pattern Brands corporate site, no store
+
+# Rechecked 2026-10-14 via UCP Checker status pages (ucpchecker.com/status/{domain}):
+#   NOT DETECTED (HTTP 404, no manifest): walmart.com, target.com, etsy.com, wayfair.com, drinkpoppi.com
+#     (big-retailer UCP checkout runs privately through Google / Microsoft, not a public manifest)
+#   BLOCKED (HTTP 403, bot protection): sugarfina.com. A manifest may exist but automated GETs are refused.
+#   VERIFIED: gymshark.com (score 94/A). Earlier "404" was because www.gymshark.com was checked;
+#     the manifest is at https://gymshark.com/.well-known/ucp. Not a party store, but a useful
+#     reference: UCP Checker's agent run did search_catalog -> create_cart successfully, and the
+#     store got a cart continue link back instead of a checkout session (same handoff pattern we plan).
+#   LESSON: try both apex and www domains before marking a store "no UCP".
+# No Shopify catalog found: partydirect.com, snacks.com
+#
+# AGENT IDENTIFICATION (from Shopify store agent instructions, e.g. gymshark.com/llms.txt):
+#   Server-to-server agent requests should identify themselves with Web Bot Auth and back off on
+#   429 (respect Retry-After). Workstream F: implement this in the UCP client before live calls.
+#
+# Finding more: https://ucpchecker.com/directory lists ~19,600 verified UCP stores
+# (no category filter). Quick manual check: GET https://{domain}/.well-known/ucp

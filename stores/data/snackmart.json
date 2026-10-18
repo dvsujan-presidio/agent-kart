@@ -1,0 +1,218 @@
+{
+ "id": "snackmart",
+ "name": "SnackMart",
+ "port": 8202,
+ "delivery_fee": 39,
+ "free_above": 500,
+ "min_order": 0,
+ "products": [
+  {
+   "product_id": "chips-200",
+   "variant_id": "chips-200",
+   "title": "Salted potato chips 200 g",
+   "category": "snacks",
+   "pack_size": 200,
+   "unit": "g",
+   "price_minor": 9500,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "namkeen-400",
+   "variant_id": "namkeen-400",
+   "title": "Mixed namkeen 400 g",
+   "category": "snacks",
+   "pack_size": 400,
+   "unit": "g",
+   "price_minor": 18000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "cookies-300",
+   "variant_id": "cookies-300",
+   "title": "Butter cookies 300 g",
+   "category": "snacks",
+   "pack_size": 300,
+   "unit": "g",
+   "price_minor": 13000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "cola-2l",
+   "variant_id": "cola-2l",
+   "title": "Cola 2 L",
+   "category": "drinks",
+   "pack_size": 2,
+   "unit": "L",
+   "price_minor": 12000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "juice-2l",
+   "variant_id": "juice-2l",
+   "title": "Mixed fruit juice 2 L",
+   "category": "drinks",
+   "pack_size": 2,
+   "unit": "L",
+   "price_minor": 14000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "cups-10-sm",
+   "variant_id": "cups-10-sm",
+   "title": "Paper cups (pack of 10)",
+   "category": "cups",
+   "pack_size": 10,
+   "unit": "pcs",
+   "price_minor": 7000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "cups-25-sm",
+   "variant_id": "cups-25-sm",
+   "title": "Paper cups (pack of 25)",
+   "category": "cups",
+   "pack_size": 25,
+   "unit": "pcs",
+   "price_minor": 15000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "napkins-50-sm",
+   "variant_id": "napkins-50-sm",
+   "title": "Paper napkins (pack of 50)",
+   "category": "napkins",
+   "pack_size": 50,
+   "unit": "pcs",
+   "price_minor": 4200,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "plates-10-sm",
+   "variant_id": "plates-10-sm",
+   "title": "Paper plates (pack of 10)",
+   "category": "plates",
+   "pack_size": 10,
+   "unit": "pcs",
+   "price_minor": 7000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "candles-sm",
+   "variant_id": "candles-sm",
+   "title": "Birthday candles (pack of 12)",
+   "category": "candles",
+   "pack_size": 12,
+   "unit": "pcs",
+   "price_minor": 4700,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "balloons-20-sm",
+   "variant_id": "balloons-20-sm",
+   "title": "Latex balloons (pack of 20)",
+   "category": "balloons",
+   "pack_size": 20,
+   "unit": "pcs",
+   "price_minor": 9200,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "banner-sm",
+   "variant_id": "banner-sm",
+   "title": "Happy Birthday banner",
+   "category": "banner",
+   "pack_size": 1,
+   "unit": "pcs",
+   "price_minor": 15200,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "hats-10-sm",
+   "variant_id": "hats-10-sm",
+   "title": "Party hats (pack of 10)",
+   "category": "party_hats",
+   "pack_size": 10,
+   "unit": "pcs",
+   "price_minor": 12200,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "11:00"
+   },
+   "attributes": {}
+  }
+ ]
+}

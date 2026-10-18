@@ -1,0 +1,41 @@
+# What to search for each shopping-list category, and which real stores to ask.
+# `keywords`: a result must contain one in its title to count (search is semantic, so this
+# keeps "headband" out of a headlamp search). `stores` are ids from config/real_stores.yaml.
+camping_weekend:
+  headlamp:    {stores: [biolite], query: headlamp, keywords: [headlamp]}
+  mug:         {stores: [stanley], query: camp mug, keywords: [mug]}
+  blanket:     {stores: [rumpl, cotopaxi], query: blanket, keywords: [blanket, throw]}
+  stove:       {stores: [biolite], query: camp stove, keywords: [stove]}
+  lantern:     {stores: [biolite], query: lantern, keywords: [lantern, alpenglow, glow]}
+  cooler:      {stores: [stanley], query: cooler, keywords: [cooler]}
+  power_bank:  {stores: [biolite], query: power bank charger, keywords: [charge, power, battery]}
+first_apartment:
+  sheets:      {stores: [brooklinen, parachute], query: sheet set, keywords: [sheet]}
+  duvet:       {stores: [brooklinen, parachute], query: duvet, keywords: [duvet, comforter]}
+  towels:      {stores: [brooklinen, parachute], query: bath towel, keywords: [towel]}
+  cookware:    {stores: [caraway, misen, ourplace], query: cookware set, keywords: [set, cookware, pan]}
+  knives:      {stores: [misen], query: knife, keywords: [knife]}
+home_gym:
+  dumbbells:     {stores: [bala], query: dumbbells, keywords: [dumbbell, bar, weight]}
+  apparel:       {stores: [gymshark], query: t-shirt, keywords: [tee, shirt, top]}
+  shoes:         {stores: [allbirds], query: running shoes, keywords: [runner, shoe, sneaker]}
+  water_bottle:  {stores: [owala], query: water bottle, keywords: [bottle, freesip, smoothsip, tumbler, sway, twist]}
+birthday_party:
+  cups:        {stores: [peachstate, sweetlulu], query: paper cups, keywords: [cup]}
+  plates:      {stores: [peachstate, sweetlulu], query: paper plates, keywords: [plate]}
+  napkins:     {stores: [peachstate, sweetlulu, merimeri], query: napkins, keywords: [napkin]}
+  balloons:    {stores: [peachstate], query: balloons, keywords: [balloon]}
+  banner:      {stores: [peachstate], query: birthday banner, keywords: [banner]}
+  candles:     {stores: [sweetlulu, merimeri], query: birthday candles, keywords: [candle]}
+  party_hats:  {stores: [peachstate], query: party hats, keywords: [hat]}
+  cake:        {stores: [milkbar, magnolia], query: birthday cake, keywords: [cake]}
+  drinks:      {stores: [olipop], query: soda variety pack, keywords: [pack, soda, olipop]}
+  snacks:      {stores: [dylans, feastables, bonbonbon], query: candy, keywords: [candy, bar, gummy, chocolate, bag]}
+
+# Real stores sell things by the piece/pack, not by gram or millilitre. For these categories the
+# need is restated in pieces (still computed in Python): fixed count or per guest.
+_units:
+  birthday_party:
+    cake:   {fixed: 1,  label: cake}
+    drinks: {per_guest: 1.5, label: cans}
+    snacks: {per_guest: 1, label: servings}

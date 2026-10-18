@@ -1,0 +1,7 @@
+scenario: home_gym
+title: Home gym
+items:
+  - {category: dumbbells,    unit: pcs, basis: per_guest, rate: 2, required: true,  aliases: [dumbbell, dumbbells]}
+  - {category: apparel,      unit: pcs, basis: per_guest, rate: 2, required: false, aliases: [apparel, clothes]}
+  - {category: shoes,        unit: pcs, basis: per_guest, rate: 1, required: false, aliases: [shoes]}
+  - {category: water_bottle, unit: pcs, basis: per_guest, rate: 1, required: true,  aliases: [bottle, water bottle]}

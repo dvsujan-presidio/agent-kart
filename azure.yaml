@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+name: agentkart
+metadata:
+  template: agentkart@0.1.0
+infra:
+  provider: bicep
+  path: infra
+  module: main
+# Phase 2 adds `services:` (api, voice, web, 4 stores) once Dockerfiles exist.

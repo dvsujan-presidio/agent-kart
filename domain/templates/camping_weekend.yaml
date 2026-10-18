@@ -1,0 +1,10 @@
+scenario: camping_weekend
+title: Camping weekend
+items:
+  - {category: headlamp,   unit: pcs, basis: per_guest, rate: 1, required: true,  aliases: [headlamp, headlamps]}
+  - {category: mug,        unit: pcs, basis: per_guest, rate: 1, required: true,  aliases: [mug, mugs, tumbler]}
+  - {category: blanket,    unit: pcs, basis: per_guest, rate: 1, required: true,  aliases: [blanket, blankets, jacket]}
+  - {category: stove,      unit: pcs, basis: fixed,     rate: 1, required: true,  aliases: [stove]}
+  - {category: lantern,    unit: pcs, basis: fixed,     rate: 1, required: true,  aliases: [lantern]}
+  - {category: cooler,     unit: pcs, basis: fixed,     rate: 1, required: false, aliases: [cooler]}
+  - {category: power_bank, unit: pcs, basis: fixed,     rate: 1, required: false, aliases: [power bank, powerbank]}

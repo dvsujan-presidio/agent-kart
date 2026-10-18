@@ -1,0 +1,762 @@
+{
+ "id": "cakecorner",
+ "name": "CakeCorner",
+ "port": 8201,
+ "delivery_fee": 49,
+ "free_above": 999,
+ "min_order": 0,
+ "products": [
+  {
+   "product_id": "cake-chocolate-standard-0.5-x",
+   "variant_id": "cake-chocolate-standard-0.5-x",
+   "title": "Chocolate Cake 0.5 kg",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 85000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "standard",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-chocolate-standard-0.5-e",
+   "variant_id": "cake-chocolate-standard-0.5-e",
+   "title": "Chocolate Cake 0.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 90000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "standard",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-chocolate-premium-0.5-x",
+   "variant_id": "cake-chocolate-premium-0.5-x",
+   "title": "Chocolate Truffle Cake 0.5 kg",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 115000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "premium",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-chocolate-premium-0.5-e",
+   "variant_id": "cake-chocolate-premium-0.5-e",
+   "title": "Chocolate Truffle Cake 0.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 120000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "premium",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-chocolate-standard-1.0-x",
+   "variant_id": "cake-chocolate-standard-1.0-x",
+   "title": "Chocolate Cake 1.0 kg",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 145000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "standard",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-chocolate-standard-1.0-e",
+   "variant_id": "cake-chocolate-standard-1.0-e",
+   "title": "Chocolate Cake 1.0 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 150000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "standard",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-chocolate-premium-1.0-x",
+   "variant_id": "cake-chocolate-premium-1.0-x",
+   "title": "Chocolate Truffle Cake 1.0 kg",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 165000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "premium",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-chocolate-premium-1.0-e",
+   "variant_id": "cake-chocolate-premium-1.0-e",
+   "title": "Chocolate Truffle Cake 1.0 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 170000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "premium",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-chocolate-standard-1.5-x",
+   "variant_id": "cake-chocolate-standard-1.5-x",
+   "title": "Chocolate Cake 1.5 kg",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 175000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "standard",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-chocolate-standard-1.5-e",
+   "variant_id": "cake-chocolate-standard-1.5-e",
+   "title": "Chocolate Cake 1.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 180000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "standard",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-chocolate-premium-1.5-x",
+   "variant_id": "cake-chocolate-premium-1.5-x",
+   "title": "Chocolate Truffle Cake 1.5 kg",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 205000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "premium",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-chocolate-premium-1.5-e",
+   "variant_id": "cake-chocolate-premium-1.5-e",
+   "title": "Chocolate Truffle Cake 1.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 210000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "premium",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-vanilla-standard-0.5-x",
+   "variant_id": "cake-vanilla-standard-0.5-x",
+   "title": "Vanilla Cake 0.5 kg",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 85000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "standard",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-vanilla-standard-0.5-e",
+   "variant_id": "cake-vanilla-standard-0.5-e",
+   "title": "Vanilla Cake 0.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 90000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "standard",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-vanilla-premium-0.5-x",
+   "variant_id": "cake-vanilla-premium-0.5-x",
+   "title": "Vanilla Truffle Cake 0.5 kg",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 115000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "premium",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-vanilla-premium-0.5-e",
+   "variant_id": "cake-vanilla-premium-0.5-e",
+   "title": "Vanilla Truffle Cake 0.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 120000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "premium",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-vanilla-standard-1.0-x",
+   "variant_id": "cake-vanilla-standard-1.0-x",
+   "title": "Vanilla Cake 1.0 kg",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 145000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "standard",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-vanilla-standard-1.0-e",
+   "variant_id": "cake-vanilla-standard-1.0-e",
+   "title": "Vanilla Cake 1.0 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 150000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "standard",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-vanilla-premium-1.0-x",
+   "variant_id": "cake-vanilla-premium-1.0-x",
+   "title": "Vanilla Truffle Cake 1.0 kg",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 165000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "premium",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-vanilla-premium-1.0-e",
+   "variant_id": "cake-vanilla-premium-1.0-e",
+   "title": "Vanilla Truffle Cake 1.0 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 170000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "premium",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-vanilla-standard-1.5-x",
+   "variant_id": "cake-vanilla-standard-1.5-x",
+   "title": "Vanilla Cake 1.5 kg",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 175000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "standard",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-vanilla-standard-1.5-e",
+   "variant_id": "cake-vanilla-standard-1.5-e",
+   "title": "Vanilla Cake 1.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 180000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "standard",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-vanilla-premium-1.5-x",
+   "variant_id": "cake-vanilla-premium-1.5-x",
+   "title": "Vanilla Truffle Cake 1.5 kg",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 205000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "premium",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-vanilla-premium-1.5-e",
+   "variant_id": "cake-vanilla-premium-1.5-e",
+   "title": "Vanilla Truffle Cake 1.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 210000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "premium",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-standard-0.5-x",
+   "variant_id": "cake-butterscotch-standard-0.5-x",
+   "title": "Butterscotch Cake 0.5 kg",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 85000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "standard",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-standard-0.5-e",
+   "variant_id": "cake-butterscotch-standard-0.5-e",
+   "title": "Butterscotch Cake 0.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 90000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "standard",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-premium-0.5-x",
+   "variant_id": "cake-butterscotch-premium-0.5-x",
+   "title": "Butterscotch Truffle Cake 0.5 kg",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 115000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "premium",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-premium-0.5-e",
+   "variant_id": "cake-butterscotch-premium-0.5-e",
+   "title": "Butterscotch Truffle Cake 0.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 0.5,
+   "unit": "kg",
+   "price_minor": 120000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "premium",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-standard-1.0-x",
+   "variant_id": "cake-butterscotch-standard-1.0-x",
+   "title": "Butterscotch Cake 1.0 kg",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 145000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "standard",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-standard-1.0-e",
+   "variant_id": "cake-butterscotch-standard-1.0-e",
+   "title": "Butterscotch Cake 1.0 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 150000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "standard",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-premium-1.0-x",
+   "variant_id": "cake-butterscotch-premium-1.0-x",
+   "title": "Butterscotch Truffle Cake 1.0 kg",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 165000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "premium",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-premium-1.0-e",
+   "variant_id": "cake-butterscotch-premium-1.0-e",
+   "title": "Butterscotch Truffle Cake 1.0 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.0,
+   "unit": "kg",
+   "price_minor": 170000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "premium",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-standard-1.5-x",
+   "variant_id": "cake-butterscotch-standard-1.5-x",
+   "title": "Butterscotch Cake 1.5 kg",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 175000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "standard",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-standard-1.5-e",
+   "variant_id": "cake-butterscotch-standard-1.5-e",
+   "title": "Butterscotch Cake 1.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 180000,
+   "rating": 4.3,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "standard",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-premium-1.5-x",
+   "variant_id": "cake-butterscotch-premium-1.5-x",
+   "title": "Butterscotch Truffle Cake 1.5 kg",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 205000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "premium",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "cake-butterscotch-premium-1.5-e",
+   "variant_id": "cake-butterscotch-premium-1.5-e",
+   "title": "Butterscotch Truffle Cake 1.5 kg (eggless)",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 210000,
+   "rating": 4.6,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {
+    "flavor": "butterscotch",
+    "tier": "premium",
+    "eggless": true
+   }
+  },
+  {
+   "product_id": "candles-cc",
+   "variant_id": "candles-cc",
+   "title": "Birthday candles (pack of 12)",
+   "category": "candles",
+   "pack_size": 12,
+   "unit": "pcs",
+   "price_minor": 6000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "knife-cc",
+   "variant_id": "knife-cc",
+   "title": "Cake knife",
+   "category": "cake_knife",
+   "pack_size": 1,
+   "unit": "pcs",
+   "price_minor": 4000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 0,
+    "time": "17:00"
+   },
+   "attributes": {}
+  }
+ ]
+}

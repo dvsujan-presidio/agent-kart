@@ -1,0 +1,13 @@
+scenario: birthday_party
+title: Birthday party
+items:
+  - {category: cake,       unit: g,   basis: per_guest, rate: 100, min: 500,  required: true,  aliases: [cake]}
+  - {category: drinks,     unit: ml,  basis: per_guest, rate: 600,            required: true,  aliases: [drink, drinks, cola, juice]}
+  - {category: snacks,     unit: g,   basis: per_guest, rate: 60,             required: true,  aliases: [snack, snacks, chips, namkeen]}
+  - {category: cups,       unit: pcs, basis: per_guest, rate: 1.5,            required: true,  aliases: [cup, cups]}
+  - {category: candles,    unit: pcs, basis: fixed,     rate: 1,              required: true,  aliases: [candle, candles]}
+  - {category: balloons,   unit: pcs, basis: per_guest, rate: 2,              required: false, aliases: [balloon, balloons]}
+  - {category: banner,     unit: pcs, basis: fixed,     rate: 1,              required: false, aliases: [banner, banners]}
+  - {category: plates,     unit: pcs, basis: per_guest, rate: 1.5,            required: false, aliases: [plate, plates]}
+  - {category: napkins,    unit: pcs, basis: per_guest, rate: 2,              required: false, aliases: [napkin, napkins]}
+  - {category: party_hats, unit: pcs, basis: per_guest, rate: 1,              required: false, aliases: [hat, hats, party hats]}

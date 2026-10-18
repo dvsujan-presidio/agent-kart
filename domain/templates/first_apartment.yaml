@@ -1,0 +1,8 @@
+scenario: first_apartment
+title: First apartment
+items:
+  - {category: sheets,   unit: pcs, basis: per_pref, pref: beds, rate: 2, required: true,  aliases: [sheets, bedsheets]}
+  - {category: duvet,    unit: pcs, basis: per_pref, pref: beds, rate: 1, required: true,  aliases: [duvet, comforter]}
+  - {category: towels,   unit: pcs, basis: per_guest, rate: 2,            required: true,  aliases: [towel, towels]}
+  - {category: cookware, unit: pcs, basis: fixed,     rate: 1,            required: true,  aliases: [cookware, pans]}
+  - {category: knives,   unit: pcs, basis: fixed,     rate: 1,            required: false, aliases: [knife, knives]}

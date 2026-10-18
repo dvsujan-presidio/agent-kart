@@ -1,0 +1,116 @@
+"""Budget trade-offs: up to N alternatives ranked by quality lost per unit saved."""
+
+from __future__ import annotations
+
+import math
+from dataclasses import replace
+from datetime import datetime, timedelta
+
+from contracts.models import Basket, Currency, ListItem, Offer, StoreTerms, TradeOff
+from domain.optimizer import DEFAULT_BUFFER, optimize
+
+# Quality-loss weights: dropping an optional item hurts least per item, shrinking a required one most.
+LOSS_CONSOLIDATE = 0.5
+LOSS_DROP_OPTIONAL = 1.0
+LOSS_DOWNSIZE = 2.0
+DOWNSIZE_FACTOR_NUM, DOWNSIZE_FACTOR_DEN = 3, 4
+
+
+def _try(items: list[ListItem], offers: list[Offer], terms: dict[str, StoreTerms], **kw):
+    r = optimize(items, offers, terms, **kw)
+    return None if r.missing_required else r.basket
+
+
+def tradeoffs(
+    items: list[ListItem],
+    offers: list[Offer],
+    terms: dict[str, StoreTerms],
+    *,
+    budget_minor: int,
+    currency: Currency,
+    deadline: datetime,
+    buffer: timedelta = DEFAULT_BUFFER,
+    exclusions: list[str] | None = None,
+    base: Basket | None = None,
+    limit: int = 3,
+) -> list[TradeOff]:
+    kw = dict(
+        budget_minor=budget_minor,
+        currency=currency,
+        deadline=deadline,
+        buffer=buffer,
+        exclusions=exclusions or [],
+    )
+    if base is None:
+        r = optimize(items, offers, terms, **kw)
+        if r.missing_required:
+            return []
+        base = r.basket
+    scored: list[tuple[float, TradeOff]] = []
+
+    def consider(title: str, basket: Basket | None, loss: float) -> None:
+        if basket is None:
+            return
+        delta = basket.total_minor - base.total_minor
+        if delta >= 0:
+            return
+        scored.append((loss / -delta, TradeOff(title=title, delta_minor=delta, basket=basket)))
+
+    # 1. drop each optional item
+    for i, it in enumerate(items):
+        if not it.required:
+            consider(
+                f"Drop {it.category.replace('_', ' ')}",
+                _try(items[:i] + items[i + 1 :], offers, terms, **kw),
+                LOSS_DROP_OPTIONAL,
+            )
+
+    # 2. downsize each item to 75% of the planned quantity
+    for i, it in enumerate(items):
+        smaller = math.ceil(it.need_qty * DOWNSIZE_FACTOR_NUM / DOWNSIZE_FACTOR_DEN)
+        if smaller >= it.need_qty or smaller < 1:
+            continue
+        shrunk = replace_item(it, smaller)
+        consider(
+            f"Reduce {it.category.replace('_', ' ')} to {smaller} {it.unit}",
+            _try(items[:i] + [shrunk] + items[i + 1 :], offers, terms, **kw),
+            LOSS_DOWNSIZE,
+        )
+
+    # 3. consolidate: stop using one of the stores
+    stores = {ln.offer.store_id for ln in base.lines}
+    if len(stores) > 1:
+        for s in sorted(stores):
+            consider(
+                f"Skip {s}, buy from the other stores",
+                _try(items, [o for o in offers if o.store_id != s], terms, **kw),
+                LOSS_CONSOLIDATE,
+            )
+
+    seen = {base.hash}
+    ranked: list[TradeOff] = []
+    # within-budget options first, then least quality lost per unit saved
+    for _, t in sorted(
+        scored,
+        key=lambda x: (
+            x[1].basket.total_minor > budget_minor,
+            x[0],
+            x[1].basket.total_minor,
+            x[1].title,
+        ),
+    ):
+        if t.basket.hash not in seen:
+            seen.add(t.basket.hash)
+            ranked.append(t)
+        if len(ranked) == limit:
+            break
+    return ranked
+
+
+def replace_item(it: ListItem, qty: int) -> ListItem:
+    return it.model_copy(
+        update={"need_qty": float(qty), "rule": f"{it.rule}; reduced to {qty} {it.unit}"}
+    )
+
+
+__all__ = ["tradeoffs", "replace"]

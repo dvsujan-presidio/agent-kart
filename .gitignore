@@ -1,0 +1,33 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage
+node_modules/
+.next/
+.azure/
+*.sqlite
+*.db
+evals/report/
+agent/app/real_stores/recordings/*.json
+!agent/app/real_stores/recordings/.gitkeep
+.DS_Store
+
+
+# tooling caches / generated
+.hypothesis
+.coverage
+.run/
+*.tsbuildinfo
+web/AGENTS.md
+web/.env*
+evals/report/
+.vscode/
+.idea/
+
+# local demo-video tooling and output (never pushed)
+demo-video/

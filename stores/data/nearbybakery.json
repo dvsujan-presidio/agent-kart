@@ -1,0 +1,68 @@
+{
+ "id": "nearbybakery",
+ "name": "NearbyBakery (pickup)",
+ "port": 8204,
+ "delivery_fee": 0,
+ "free_above": 0,
+ "min_order": 0,
+ "pickup_only": true,
+ "products": [
+  {
+   "product_id": "nb-cake-chocolate-1.5",
+   "variant_id": "nb-cake-chocolate-1.5",
+   "title": "Chocolate Cake 1.5 kg",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 178000,
+   "rating": 4.4,
+   "in_stock": true,
+   "eta_rule": {
+    "hours": 1
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "standard",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "nb-cake-vanilla-1.5",
+   "variant_id": "nb-cake-vanilla-1.5",
+   "title": "Vanilla Cake 1.5 kg",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 178000,
+   "rating": 4.4,
+   "in_stock": true,
+   "eta_rule": {
+    "hours": 1
+   },
+   "attributes": {
+    "flavor": "vanilla",
+    "tier": "standard",
+    "eggless": false
+   }
+  },
+  {
+   "product_id": "nb-cake-chocolate-1.5-e",
+   "variant_id": "nb-cake-chocolate-1.5-e",
+   "title": "Chocolate Cake 1.5 kg eggless",
+   "category": "cake",
+   "pack_size": 1.5,
+   "unit": "kg",
+   "price_minor": 183000,
+   "rating": 4.4,
+   "in_stock": true,
+   "eta_rule": {
+    "hours": 1
+   },
+   "attributes": {
+    "flavor": "chocolate",
+    "tier": "standard",
+    "eggless": true
+   }
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "id": "partybazaar",
+ "name": "PartyBazaar",
+ "port": 8203,
+ "delivery_fee": 59,
+ "free_above": 0,
+ "min_order": 0,
+ "products": [
+  {
+   "product_id": "cups-25-pb",
+   "variant_id": "cups-25-pb",
+   "title": "Paper cups (pack of 25)",
+   "category": "cups",
+   "pack_size": 25,
+   "unit": "pcs",
+   "price_minor": 8500,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 2,
+    "time": "12:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "plates-10-pb",
+   "variant_id": "plates-10-pb",
+   "title": "Paper plates (pack of 10)",
+   "category": "plates",
+   "pack_size": 10,
+   "unit": "pcs",
+   "price_minor": 6000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "14:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "balloons-20-pb",
+   "variant_id": "balloons-20-pb",
+   "title": "Latex balloons (pack of 20)",
+   "category": "balloons",
+   "pack_size": 20,
+   "unit": "pcs",
+   "price_minor": 9000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "14:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "balloons-20-prem",
+   "variant_id": "balloons-20-prem",
+   "title": "Metallic balloons (pack of 20)",
+   "category": "balloons",
+   "pack_size": 20,
+   "unit": "pcs",
+   "price_minor": 16000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "14:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "banner-pb",
+   "variant_id": "banner-pb",
+   "title": "Happy Birthday banner",
+   "category": "banner",
+   "pack_size": 1,
+   "unit": "pcs",
+   "price_minor": 15000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "14:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "hats-10-pb",
+   "variant_id": "hats-10-pb",
+   "title": "Party hats (pack of 10)",
+   "category": "party_hats",
+   "pack_size": 10,
+   "unit": "pcs",
+   "price_minor": 12000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "14:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "candles-pb",
+   "variant_id": "candles-pb",
+   "title": "Birthday candles (pack of 12)",
+   "category": "candles",
+   "pack_size": 12,
+   "unit": "pcs",
+   "price_minor": 4500,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "14:00"
+   },
+   "attributes": {}
+  },
+  {
+   "product_id": "napkins-50-pb",
+   "variant_id": "napkins-50-pb",
+   "title": "Paper napkins (pack of 50)",
+   "category": "napkins",
+   "pack_size": 50,
+   "unit": "pcs",
+   "price_minor": 4000,
+   "rating": 4.2,
+   "in_stock": true,
+   "eta_rule": {
+    "days": 1,
+    "time": "14:00"
+   },
+   "attributes": {}
+  }
+ ]
+}
